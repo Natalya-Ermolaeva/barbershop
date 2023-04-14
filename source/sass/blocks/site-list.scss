@@ -1,0 +1,142 @@
+.site-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.site-list__item:not(:last-child) {
+  @media (min-width: $tablet-width) {
+    margin-right: 34px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+}
+
+.site-list__link {
+  display: block;
+  padding: 12px 21px 13px;
+  font-weight: 700;
+  line-height: 24px;
+  color: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $brown;
+
+  @media (min-width: $tablet-width) {
+    padding: 24px 0;
+    background-color: $black;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 24px 31px;
+    background-color: $black;
+  }
+}
+
+.main-nav--closed .site-list__link {
+  text-align: center;
+
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+
+  &--current {
+    @media (max-width: $mobile-width-only) {
+      display: block;
+    }
+  }
+}
+
+.site-list__link[href] {
+  @media (min-width: $tablet-width) {
+    &:hover {
+      color: $brown;
+    }
+
+    &:active {
+      color: rgba($white, 0.3);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+
+    &:active {
+      color: rgba($black, 0.3);
+    }
+  }
+}
+
+.main-nav--opened .site-list__link {
+  border-top: 1px solid $light-brown;
+  border-bottom: 1px solid $middle-brown;
+}
+
+.main-nav--nojs .site-list__link {
+  @media (max-width: $mobile-width-only) {
+    display: block;
+    border-top: 1px solid $light-brown;
+    border-bottom: 1px solid $middle-brown;
+    text-align: left;
+  }
+}
+
+.main-nav--opened .site-list__link:hover,
+.main-nav--opened .site-list__link:active {
+  background-color: $dark-brown;
+  border-top-color: $dark-brown;
+  border-bottom-color: $dark-brown;
+}
+
+.main-nav--opened .site-list__link:active {
+  color: rgba($white, 0.3);
+}
+
+.site-list__link--current {
+  @media (min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background-color: $brown;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 31px;
+    margin-right: 31px;
+  }
+}
+
+.main-nav--closed .site-list__link--current {
+  @media (max-width: $mobile-width-only) {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+.main-nav--nojs .site-list__link--current {
+  @media (max-width: $mobile-width-only) {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}

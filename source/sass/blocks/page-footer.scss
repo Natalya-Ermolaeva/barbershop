@@ -1,0 +1,27 @@
+.page-footer {
+  background-color: #292929;
+  padding-top: 67px;
+  padding-bottom: 24px;
+  color: $white;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 51px;
+    padding-bottom: 60px;
+  }
+}
+
+.page-footer__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
